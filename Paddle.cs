@@ -11,6 +11,7 @@ public class Paddle : Area2D
     [Export]
     private int ballDirection = 1;
     private RandomNumberGenerator randomNumberGenerator;
+
     public override void _Ready()
     {
         this.randomNumberGenerator = new RandomNumberGenerator();
