@@ -19,8 +19,8 @@ public class Paddle : Area2D
 
     public override void _Process(float delta)
     {
-        String name = GetName();
-        Vector2 currentPosition = GetPosition();
+        String name = this.Name;
+        Vector2 currentPosition = this.Position;
 
         if (Input.IsActionPressed(name + INPUT_MOVE_UP_SUFFIX) && currentPosition.y > 40)
         {
@@ -32,12 +32,12 @@ public class Paddle : Area2D
             currentPosition = new Vector2(currentPosition.x, currentPosition.y + speed * delta);
         }
 
-        SetPosition(currentPosition);
+        this.Position = currentPosition;
     }
 
     public void OnPaddleAreaEntered(Area2D area)
     {
-        if (area.GetName().Equals("ball"))
+        if (area.Name.Equals("ball"))
         {
             Ball ball = area as Ball;
             Vector2 newDirection = new Vector2(ballDirection, this.randomNumberGenerator.Randf() * 2 - 1).Normalized();

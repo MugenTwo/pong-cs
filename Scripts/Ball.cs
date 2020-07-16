@@ -27,7 +27,7 @@ public class Ball : Area2D
     {
         this.currentPosition += currentDirection * speed * delta;
 
-        SetPosition(this.currentPosition);
+        this.Position = this.currentPosition;
     }
 
 }

@@ -7,7 +7,7 @@ public class Wall : Area2D
     private int yDirection = 1;
     public void OnWallAreaEntered(Area2D area)
     {
-        if (area.GetName().Equals("ball"))
+        if (area.Name.Equals("ball"))
         {
             Ball ball = area as Ball;
             ball.currentDirection = new Vector2(ball.currentDirection.x, yDirection);
